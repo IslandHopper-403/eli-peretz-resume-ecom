@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eli Peretz - Shopify Developer & E-commerce Strategist</title>
+  <style>
+    /* Modern, clean design with improved readability */
+    :root {
+      --primary: #96bf48;
+      --secondary: #7a9b3a;
+      --dark: #333333;
+      --light: #ffffff;
+      --accent: #f8f9fa;
+      --gray: #6c757d;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      font-size: 0.95rem;
+    }
+    
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 25px;
+    }
+    
+    /* Header */
+    .resume-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+    }
+    
+    .name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 5px;
+    }
+    
+    .title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-item svg {
+      margin-right: 8px;
+      fill: var(--primary);
+    }
+    
+    /* Main layout */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .main-column {
+      order: 1;
+    }
+    
+    .side-column {
+      order: 2;
+      background-color: var(--accent);
+      padding: 25px;
+      border-radius: 6px;
+    }
+    
+    /* Sections */
+    .section {
+      margin-bottom: 28px;
+    }
+    
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 15px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    /* Summary */
+    .summary {
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
+    
+    /* Skills */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      list-style-type: none;
+    }
+    
+    .skill-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-item:before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block; 
+      width: 15px;
+    }
+    
+    /* Experience */
+    .experience-item {
+      margin-bottom: 20px;
+    }
+    
+    .experience-header {
+      margin-bottom: 10px;
+    }
+    
+    .job-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+    
+    .company {
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      color: var(--dark);
+    }
+    
+    .job-period {
+      color: var(--gray);
+      font-weight: normal;
+    }
+    
+    .job-description {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .achievements-list {
+      list-style-type: none;
+    }
+    
+    .achievement-item {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.9rem;
+    }
+    
+    .achievement-item::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .highlight {
+      font-weight: 500;
+    }
+    
+    /* Education */
+    .education-item {
+      margin-bottom: 12px;
+    }
+    
+    .degree {
+      font-weight: 600;
+    }
+    
+    .school {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+    
+    /* Technologies */
+    .tech-categories {
+      margin-bottom: 10px;
+    }
+    
+    .tech-category {
+      margin-bottom: 8px;
+    }
+    
+    .category-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .tech-list {
+      font-size: 0.9rem;
+    }
+
+    /* Portfolio Links */
+    .portfolio-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .portfolio-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .resume-body {
+        grid-template-columns: 1fr;
+      }
+      
+      .main-column {
+        order: 2;
+      }
+      
+      .side-column {
+        order: 1;
+      }
+      
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="resume-header">
+      <h1 class="name">ELI PERETZ</h1>
+      <h2 class="title">Shopify Developer & E-commerce Strategist</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+          </svg>
+          Victoria, BC
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+          </svg>
+          Eli.Peretz1992@gmail.com
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
+          </svg>
+          (403) 437-2063
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          My LinkedIn
+        </div>
+      </div>
+    </header>
+
+    <div class="resume-body">
+      <main class="main-column">
+        <!-- Summary Section -->
+        <section class="summary">
+          Full-stack Shopify Developer and E-commerce Strategist with 4+ years building profitable online brands from concept to launch. Expertise in theme customization, conversion optimization, and integrated marketing strategies that drive measurable results across the entire customer journey.
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section">
+          <h3 class="section-title">PORTFOLIO & PROFESSIONAL EXPERIENCE</h3>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="job-title">Founder & E-commerce Developer</div>
+              <div class="company">
+                Mountain Village Merchandise
+                <span class="job-period">2020–Present</span>
+              </div>
+            </div>
+            <p class="job-description">
+              Built and launched complete dropshipping brand for outdoor lifestyle and home goods. Managed entire development lifecycle from brand design to website deployment and performance marketing.
+            </p>
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Brand Development:</span> Designed complete brand identity including logos, product designs, and ad creatives working with Fiverr freelancers.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Traffic Generation:</span> Drove 10,000+ visitors through strategic Facebook & Instagram advertising using "Rule of One" methodology.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Technical Implementation:</span> Built custom Shopify store using Dawn theme with conversion-optimized checkout flow and post-purchase upsells.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Marketing Automation:</span> Implemented comprehensive Klaviyo email flows including abandoned cart, browse abandonment, and post-purchase sequences.
+              </li>
+            </ul>
+          </div>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="job-title">Shopify Developer & Strategist</div>
+              <div class="company">
+                Hadita Flow Fashion
+                <span class="job-period">2023–Present</span>
+              </div>
+            </div>
+            <p class="job-description">
+              Developed complete e-commerce solution for women's fashion brand including product catalog organization, custom landing pages, and conversion optimization strategies.
+            </p>
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Store Architecture:</span> Built intuitive product catalog structure with optimized navigation and collection pages for fashion discovery.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Custom Development:</span> Created targeted landing pages for key products with psychological triggers including scarcity, urgency, and trust elements.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Conversion Strategy:</span> Integrated countdown timers, stock indicators, and strategic CTAs to maximize conversion rates.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Live Project:</span> Currently active at <a href="https://haditaflow.com" class="portfolio-link">haditaflow.com</a> with ongoing advertising campaigns.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="job-title">E-commerce Developer</div>
+              <div class="company">
+                Additional Portfolio Projects
+                <span class="job-period">2021–2024</span>
+              </div>
+            </div>
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Northern Pine Saunas:</span> Built B2B e-commerce site for authorized retailer selling saunas and ice baths with 3PL integration.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Geummy Supplements:</span> Developed Shopify store for gummy supplement brand with subscription model and compliance considerations.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Multi-Platform Experience:</span> Additional development work using WooCommerce, Wix, and SquareSpace for diverse client needs.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Core Competencies Section -->
+        <section class="section">
+          <h3 class="section-title">CORE COMPETENCIES</h3>
+          
+          <div class="experience-item">
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Conversion Psychology:</span> Implemented FOMO tactics, scarcity principles, and trust signals to optimize customer decision-making processes.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Full-Stack Development:</span> Custom theme development using Liquid, CSS, and JavaScript with mobile-responsive design principles.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Marketing Integration:</span> End-to-end customer journey optimization from cold traffic acquisition to post-purchase retention and upselling.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <aside class="side-column">
+        <!-- Skills Section -->
+        <section class="section">
+          <h3 class="section-title">TECHNICAL SKILLS</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Shopify Theme Development</li>
+            <li class="skill-item">Liquid Template Language</li>
+            <li class="skill-item">HTML5 & CSS3</li>
+            <li class="skill-item">JavaScript (ES6+)</li>
+            <li class="skill-item">Responsive Web Design</li>
+            <li class="skill-item">Git & GitHub</li>
+            <li class="skill-item">Vercel Deployment</li>
+            <li class="skill-item">AI-Assisted Development</li>
+            <li class="skill-item">Custom CSS Implementation</li>
+            <li class="skill-item">Performance Optimization</li>
+          </ul>
+        </section>
+
+        <!-- Shopify Expertise -->
+        <section class="section">
+          <h3 class="section-title">SHOPIFY EXPERTISE</h3>
+          <div class="tech-categories">
+            <div class="tech-category">
+              <div class="category-name">Themes Mastered</div>
+              <div class="tech-list">Dawn, Pipeline, Impulse, Motion</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">Apps & Integrations</div>
+              <div class="tech-list">PageFly, GemPages, Hextom Suite, ReConvert, One-Click Upsell, Judge.me</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">Marketing Tools</div>
+              <div class="tech-list">Klaviyo, Facebook & Instagram, Google & YouTube, Meta Business Suite</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">Analytics & Tracking</div>
+              <div class="tech-list">Google Analytics, Google Ads, Google Shopping, GTM, Merchant Centre</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Design Tools -->
+        <section class="section">
+          <h3 class="section-title">DESIGN & DEVELOPMENT</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Adobe XD</li>
+            <li class="skill-item">Figma</li>
+            <li class="skill-item">Adobe Illustrator</li>
+            <li class="skill-item">Canva</li>
+            <li class="skill-item">UX/UI Design</li>
+            <li class="skill-item">Conversion Rate Optimization</li>
+            <li class="skill-item">A/B Testing</li>
+            <li class="skill-item">User Journey Mapping</li>
+          </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+          <h3 class="section-title">EDUCATION</h3>
+          
+          <div class="education-item">
+            <div class="degree">Bachelor of Arts</div>
+            <div class="school">
+              <span>Vancouver Island University</span>
+              <span>Ant. 2024</span>
+            </div>
+            <div>Psychology, Business & Marketing</div>
+          </div>
+          
+          <div class="education-item">
+            <div class="degree">High School Diploma</div>
+            <div class="school">
+              <span>Henry WiseWood High School</span>
+              <span>2010</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- E-commerce Specializations -->
+        <section class="section">
+          <h3 class="section-title">E-COMMERCE SPECIALIZATIONS</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Dropshipping Operations</li>
+            <li class="skill-item">3PL Integration</li>
+            <li class="skill-item">Subscription Models</li>
+            <li class="skill-item">Fashion E-commerce</li>
+            <li class="skill-item">B2B Sales Funnels</li>
+            <li class="skill-item">Supplement Compliance</li>
+            <li class="skill-item">Email Marketing Automation</li>
+            <li class="skill-item">Facebook Ads Strategy</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
