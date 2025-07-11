@@ -36,9 +36,36 @@
     
     /* Header */
     .resume-header {
+      margin-bottom: 25px;
+    }
+    
+    .header-content {
       display: flex;
       flex-direction: column;
-      margin-bottom: 25px;
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 25px;
+    }
+    
+    .profile-image {
+      flex-shrink: 0;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .header-text {
+      flex: 1;
     }
     
     .name {
@@ -245,32 +272,41 @@
   <div class="container">
     <!-- Header Section -->
     <header class="resume-header">
-      <h1 class="name">ELI PERETZ</h1>
-      <h2 class="title">Amazon PPC Specialist & Listing Optimization Expert</h2>
-      <div class="contact-info">
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
-          </svg>
-          Victoria, BC
+      <div class="header-content">
+        <div class="profile-section">
+          <div class="profile-image">
+            <img src="profile-photo.jpg" alt="Eli Peretz Professional Photo" class="profile-img">
+          </div>
+          <div class="header-text">
+            <h1 class="name">ELI PERETZ</h1>
+            <h2 class="title">Amazon PPC Specialist & Listing Optimization Expert</h2>
+          </div>
         </div>
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-          </svg>
-          Eli.Peretz1992@gmail.com
-        </div>
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
-          </svg>
-          +1 (403) 830-0784
-        </div>
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-          </svg>
-          <a href="https://www.linkedin.com/in/eli-peretz/" target="_blank" style="color: inherit; text-decoration: none;">LinkedIn Profile</a>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+            </svg>
+            Victoria, BC
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+            </svg>
+            Eli.Peretz1992@gmail.com
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
+            </svg>
+            +1 403 830-0784
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <a href="https://www.linkedin.com/in/eli-peretz/" target="_blank" style="color: inherit; text-decoration: none;">LinkedIn Profile</a>
+          </div>
         </div>
       </div>
     </header>
