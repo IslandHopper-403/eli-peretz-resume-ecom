@@ -1,6 +1,3 @@
-# eli-peretz-resume-ecom
-
-
 # Eli Peretz - Professional Resume
 
 ## About
