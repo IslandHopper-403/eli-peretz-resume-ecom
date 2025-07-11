@@ -23,8 +23,8 @@ This is my professional resume website showcasing my expertise as an Amazon PPC 
 
 ## Contact
 - Email: Eli.Peretz1992@gmail.com
-- Phone: (403) 437-2063
-- LinkedIn: [My LinkedIn Profile](link-to-linkedin)
+- Phone: +1 (403) 830-0784
+- LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/eli-peretz/)
 
 ## Last Updated
 July 2025
