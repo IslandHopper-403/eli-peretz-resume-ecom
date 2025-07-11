@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eli Peretz - UI/UX Developer & AI-Assisted Development Specialist</title>
+  <style>
+    /* Modern, clean design with improved readability */
+    :root {
+      --primary: #6366f1;
+      --secondary: #8b5cf6;
+      --dark: #333333;
+      --light: #ffffff;
+      --accent: #f8fafc;
+      --gray: #6c757d;
+      --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      font-size: 0.95rem;
+    }
+    
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 25px;
+    }
+    
+    /* Header */
+    .resume-header {
+      margin-bottom: 25px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 25px;
+    }
+    
+    .profile-image {
+      flex-shrink: 0;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid transparent;
+      background: var(--gradient);
+      padding: 2px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .profile-img-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .header-text {
+      flex: 1;
+    }
+    
+    .name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+      margin-bottom: 5px;
+    }
+    
+    .title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-item svg {
+      margin-right: 8px;
+      fill: var(--primary);
+    }
+    
+    /* Main layout */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .main-column {
+      order: 1;
+    }
+    
+    .side-column {
+      order: 2;
+      background: var(--accent);
+      padding: 25px;
+      border-radius: 6px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    /* Sections */
+    .section {
+      margin-bottom: 28px;
+    }
+    
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    /* Summary */
+    .summary {
+      margin-bottom: 25px;
+      font-size: 1rem;
+      padding: 20px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    /* Skills */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      list-style-type: none;
+    }
+    
+    .skill-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-item:before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block; 
+      width: 15px;
+    }
+    
+    /* Experience */
+    .experience-item {
+      margin-bottom: 20px;
+    }
+    
+    .experience-header {
+      margin-bottom: 10px;
+    }
+    
+    .job-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+    
+    .company {
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      color: var(--dark);
+    }
+    
+    .job-period {
+      color: var(--gray);
+      font-weight: normal;
+    }
+    
+    .job-description {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .achievements-list {
+      list-style-type: none;
+    }
+    
+    .achievement-item {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.9rem;
+    }
+    
+    .achievement-item::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .highlight {
+      font-weight: 500;
+    }
+    
+    /* Project showcase */
+    .project-showcase {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 2px solid #e2e8f0;
+    }
+    
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    
+    .project-type {
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    
+    /* Education */
+    .education-item {
+      margin-bottom: 12px;
+    }
+    
+    .degree {
+      font-weight: 600;
+    }
+    
+    .school {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+    
+    /* Technologies */
+    .tech-categories {
+      margin-bottom: 10px;
+    }
+    
+    .tech-category {
+      margin-bottom: 8px;
+    }
+    
+    .category-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+    
+    .tech-list {
+      font-size: 0.9rem;
+    }
+
+    /* AI Tools Special Section */
+    .ai-tools {
+      background: var(--gradient);
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    
+    .ai-tools .category-name {
+      color: white;
+      font-weight: 600;
+    }
+    
+    .ai-tools .tech-list {
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* Portfolio Links */
+    .portfolio-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .portfolio-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .resume-body {
+        grid-template-columns: 1fr;
+      }
+      
+      .main-column {
+        order: 2;
+      }
+      
+      .side-column {
+        order: 1;
+      }
+      
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="resume-header">
+      <div class="header-content">
+        <div class="profile-section">
+          <div class="profile-image">
+            <div class="profile-img">
+              <img src="profile-photo.jpg" alt="Eli Peretz Professional Photo" class="profile-img-inner">
+            </div>
+          </div>
+          <div class="header-text">
+            <h1 class="name">ELI PERETZ</h1>
+            <h2 class="title">UI/UX Developer & AI-Assisted Development Specialist</h2>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+            </svg>
+            Victoria, BC
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+            </svg>
+            Eli.Peretz1992@gmail.com
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
+            </svg>
+            +1 403 830-0784
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <a href="https://www.linkedin.com/in/eli-peretz/" target="_blank" style="color: inherit; text-decoration: none;">LinkedIn Profile</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="resume-body">
+      <main class="main-column">
+        <!-- Summary Section -->
+        <section class="summary">
+          UI/UX Developer specializing in AI-assisted development workflows, transforming wireframes and prototypes into fully functional web applications. Expert in bridging the gap between design and development through modern toolchains including Adobe XD, Figma, and strategic AI implementation for rapid prototyping and deployment.
+        </section>
+
+        <!-- Portfolio Projects Section -->
+        <section class="section">
+          <h3 class="section-title">FEATURED PROJECTS & PORTFOLIO</h3>
+          
+          <div class="project-showcase">
+            <div class="project-title">SocialU! - Dating & Restaurant Promotion App</div>
+            <div class="project-type">Full-Stack Web Application • Adobe XD to Production</div>
+            <p class="job-description">
+              Complete mobile-first web application combining social networking with local business promotion. Designed from wireframe to working product using AI-assisted development workflow.
+            </p>
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Design to Development:</span> Created complete UI/UX design in Adobe XD, then utilized AI-assisted coding to build functional web app deployed on Vercel.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Backend Integration:</span> Implemented Firebase authentication, real-time messaging, user profiles, and business dashboard functionality.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">User Experience:</span> Designed intuitive user flows for dating discovery, restaurant promotions, and social interactions with mobile-optimized interfaces.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Technical Implementation:</span> Multi-file refactored HTML codebase with responsive design and interactive prototyping elements.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="job-title">UI/UX Designer & Developer</div>
+              <div class="company">
+                Mobile App Portfolio Projects
+                <span class="job-period">2023–Present</span>
+              </div>
+            </div>
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Multi-App Design Portfolio:</span> Created wireframes, mockups, and interactive prototypes for dating app, restaurant promotion app, and dog walking app using Adobe XD.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Design System Implementation:</span> Developed consistent design language using 8px spacing rules, golden ratio principles, and component-based architecture.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">AI-Assisted Development:</span> Established workflow using Claude for HTML/CSS development, ChatGPT for copywriting, and Gemini for competitive research and best practices.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Prototype to Production:</span> Successfully converted Adobe XD prototypes to functional web applications using GitHub repositories and Vercel deployment.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- AI-Assisted Development Methodology -->
+        <section class="section">
+          <h3 class="section-title">AI-ASSISTED DEVELOPMENT METHODOLOGY</h3>
+          
+          <div class="experience-item">
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Design-to-Code Workflow:</span> Streamlined process of uploading Adobe XD/Figma designs to AI platforms for automated HTML/CSS generation and rapid prototyping.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Strategic AI Implementation:</span> Leveraged multiple AI platforms for specialized functions - Claude for development, ChatGPT for content, Gemini for research and best practices.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Rapid Iteration Capability:</span> Reduced design-to-deployment timeline through AI-assisted coding, GitHub version control, and Vercel continuous deployment.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- E-commerce Integration -->
+        <section class="section">
+          <h3 class="section-title">E-COMMERCE & MARKETPLACE EXPERIENCE</h3>
+          
+          <div class="experience-item">
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Shopify Theme Customization:</span> Applied UI/UX principles to customize Dawn, Pipeline, Impulse, and Motion themes for optimal conversion rates.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Amazon Marketplace Optimization:</span> Designed conversion-focused product listings and A+ content using psychological design principles and user experience best practices.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Conversion Psychology Integration:</span> Implemented FOMO tactics, scarcity principles, and trust signals into UI designs to maximize customer decision-making efficiency.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <aside class="side-column">
+        <!-- AI Tools Expertise -->
+        <div class="ai-tools">
+          <div class="category-name">🤖 AI DEVELOPMENT STACK</div>
+          <div class="tech-list">Claude for HTML/CSS Development • ChatGPT for Content Strategy • Gemini for Research & Best Practices • Strategic AI Workflow Optimization</div>
+        </div>
+
+        <!-- Design Tools -->
+        <section class="section">
+          <h3 class="section-title">DESIGN & PROTOTYPING</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Adobe XD</li>
+            <li class="skill-item">Figma</li>
+            <li class="skill-item">Interactive Prototyping</li>
+            <li class="skill-item">Wireframing</li>
+            <li class="skill-item">Component Systems</li>
+            <li class="skill-item">Design Systems</li>
+            <li class="skill-item">Mobile-First Design</li>
+            <li class="skill-item">Responsive Web Design</li>
+            <li class="skill-item">User Flow Design</li>
+            <li class="skill-item">8px Grid System</li>
+          </ul>
+        </section>
+
+        <!-- Development Skills -->
+        <section class="section">
+          <h3 class="section-title">DEVELOPMENT STACK</h3>
+          <div class="tech-categories">
+            <div class="tech-category">
+              <div class="category-name">Frontend</div>
+              <div class="tech-list">HTML5, CSS3, JavaScript, Responsive Design</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">Backend & Database</div>
+              <div class="tech-list">Firebase, Authentication, Real-time Database</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">Deployment</div>
+              <div class="tech-list">GitHub, Vercel, Version Control</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">E-commerce Platforms</div>
+              <div class="tech-list">Shopify, Amazon Seller Central, Theme Customization</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- UX Principles -->
+        <section class="section">
+          <h3 class="section-title">UX/UI EXPERTISE</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Conversion Rate Optimization</li>
+            <li class="skill-item">User Psychology</li>
+            <li class="skill-item">Mobile UX Best Practices</li>
+            <li class="skill-item">Accessibility Standards</li>
+            <li class="skill-item">Information Architecture</li>
+            <li class="skill-item">Visual Hierarchy</li>
+            <li class="skill-item">Typography Systems</li>
+            <li class="skill-item">Color Theory</li>
+            <li class="skill-item">Micro-interactions</li>
+            <li class="skill-item">Usability Principles</li>
+          </ul>
+        </section>
+
+        <!-- Design Research -->
+        <section class="section">
+          <h3 class="section-title">RESEARCH & STRATEGY</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Competitive Analysis</li>
+            <li class="skill-item">Excel Data Organization</li>
+            <li class="skill-item">AI-Assisted Research</li>
+            <li class="skill-item">Customer Journey Mapping</li>
+            <li class="skill-item">Market Research</li>
+            <li class="skill-item">Best Practice Analysis</li>
+          </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+          <h3 class="section-title">EDUCATION</h3>
+          
+          <div class="education-item">
+            <div class="degree">Bachelor of Arts</div>
+            <div class="school">
+              <span>Vancouver Island University</span>
+              <span>Ant. 2024</span>
+            </div>
+            <div>Psychology, Business & Marketing</div>
+          </div>
+          
+          <div class="education-item">
+            <div class="degree">High School Diploma</div>
+            <div class="school">
+              <span>Henry WiseWood High School</span>
+              <span>2010</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Additional Software -->
+        <section class="section">
+          <h3 class="section-title">ADDITIONAL TOOLS</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Adobe Illustrator</li>
+            <li class="skill-item">Canva</li>
+            <li class="skill-item">Microsoft Excel</li>
+            <li class="skill-item">Google Analytics</li>
+            <li class="skill-item">Klaviyo</li>
+            <li class="skill-item">Meta Business Suite</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
