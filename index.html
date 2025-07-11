@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eli Peretz - Amazon PPC & Listing Optimization Specialist</title>
+  <title>Eli Peretz - Professional Resume Portfolio</title>
   <style>
-    /* Modern, clean design with improved readability */
     :root {
-      --primary: #2c6fad;
+      --primary: #2c5aa0;
+      --secondary: #96bf48;
       --dark: #333333;
       --light: #ffffff;
-      --accent: #f5f5f5;
+      --accent: #f8f9fa;
       --gray: #6c757d;
     }
     
@@ -24,219 +24,193 @@
       font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
       color: var(--dark);
       line-height: 1.6;
-      background-color: var(--light);
-      font-size: 0.95rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
     }
     
     .container {
-      max-width: 850px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 25px;
+      padding: 40px 20px;
     }
     
-    /* Header */
-    .resume-header {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 25px;
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      color: white;
     }
     
     .name {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.5px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
     
-    .title {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: var(--gray);
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
+    .tagline {
+      font-size: 1.4rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
     }
     
     .contact-info {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.9rem;
+      gap: 20px;
+      font-size: 1rem;
+      opacity: 0.8;
     }
     
     .contact-item {
       display: flex;
       align-items: center;
-    }
-    
-    .contact-item svg {
-      margin-right: 8px;
-      fill: var(--primary);
-    }
-    
-    /* Main layout */
-    .resume-body {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-    }
-    
-    .main-column {
-      order: 1;
-    }
-    
-    .side-column {
-      order: 2;
-      background-color: var(--accent);
-      padding: 25px;
-      border-radius: 6px;
-    }
-    
-    /* Sections */
-    .section {
-      margin-bottom: 28px;
-    }
-    
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 15px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid var(--primary);
-    }
-    
-    /* Summary */
-    .summary {
-      margin-bottom: 25px;
-      font-size: 1rem;
-    }
-    
-    /* Skills */
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
-      list-style-type: none;
     }
     
-    .skill-item {
+    .resume-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .resume-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: var(--dark);
+    }
+    
+    .resume-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+      text-decoration: none;
+      color: var(--dark);
+    }
+    
+    .card-header {
       display: flex;
       align-items: center;
-    }
-    
-    .skill-item:before {
-      content: "•";
-      color: var(--primary);
-      font-weight: bold;
-      display: inline-block; 
-      width: 15px;
-    }
-    
-    /* Experience */
-    .experience-item {
       margin-bottom: 20px;
     }
     
-    .experience-header {
-      margin-bottom: 10px;
-    }
-    
-    .job-title {
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: var(--dark);
-    }
-    
-    .company {
-      font-weight: 500;
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
       display: flex;
-      justify-content: space-between;
-      color: var(--dark);
-    }
-    
-    .job-period {
-      color: var(--gray);
-      font-weight: normal;
-    }
-    
-    .job-description {
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-    }
-    
-    .achievements-list {
-      list-style-type: none;
-    }
-    
-    .achievement-item {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-      font-size: 0.9rem;
-    }
-    
-    .achievement-item::before {
-      content: "→";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 1.5rem;
+      color: white;
       font-weight: bold;
     }
     
-    .highlight {
-      font-weight: 500;
+    .amazon-icon {
+      background: linear-gradient(135deg, #FF9500 0%, #FF6B35 100%);
     }
     
-    /* Education */
-    .education-item {
-      margin-bottom: 12px;
+    .shopify-icon {
+      background: linear-gradient(135deg, #96bf48 0%, #7ab800 100%);
     }
     
-    .degree {
-      font-weight: 600;
-    }
-    
-    .school {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-    }
-    
-    /* Technologies */
-    .tech-categories {
-      margin-bottom: 10px;
-    }
-    
-    .tech-category {
-      margin-bottom: 8px;
-    }
-    
-    .category-name {
+    .card-title {
+      font-size: 1.4rem;
       font-weight: 600;
       margin-bottom: 5px;
     }
     
-    .tech-list {
+    .card-subtitle {
+      color: var(--gray);
       font-size: 0.9rem;
     }
-
-    /* Responsive design */
+    
+    .card-description {
+      margin-bottom: 20px;
+      color: var(--gray);
+    }
+    
+    .skills-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .skill-tag {
+      background: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--dark);
+      border: 1px solid #e0e0e0;
+    }
+    
+    .view-resume-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .amazon .view-resume-btn {
+      background: linear-gradient(135deg, #FF9500 0%, #FF6B35 100%);
+    }
+    
+    .shopify .view-resume-btn {
+      background: linear-gradient(135deg, #96bf48 0%, #7ab800 100%);
+    }
+    
+    .view-resume-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+      color: white;
+    }
+    
+    .footer {
+      text-align: center;
+      color: white;
+      opacity: 0.8;
+    }
+    
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
     @media (max-width: 768px) {
-      .resume-body {
+      .name {
+        font-size: 2.2rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .resume-grid {
         grid-template-columns: 1fr;
       }
       
-      .main-column {
-        order: 2;
-      }
-      
-      .side-column {
-        order: 1;
-      }
-      
-      .skills-list {
-        grid-template-columns: 1fr;
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
       }
     }
   </style>
@@ -244,198 +218,79 @@
 <body>
   <div class="container">
     <!-- Header Section -->
-    <header class="resume-header">
+    <header class="header">
       <h1 class="name">ELI PERETZ</h1>
-      <h2 class="title">Amazon PPC Specialist & Listing Optimization Expert</h2>
+      <p class="tagline">Marketing Professional & E-commerce Developer</p>
       <div class="contact-info">
         <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
-          </svg>
-          Victoria, BC
+          📍 Victoria, BC
         </div>
         <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-          </svg>
-          Eli.Peretz1992@gmail.com
+          📧 Eli.Peretz1992@gmail.com
         </div>
         <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
-          </svg>
-          (403) 437-2063
+          📱 (403) 437-2063
         </div>
         <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-          </svg>
-          My LinkedIn
+          💼 My LinkedIn
         </div>
       </div>
     </header>
 
-    <div class="resume-body">
-      <main class="main-column">
-        <!-- Summary Section -->
-        <section class="summary">
-          Innovative E-commerce Marketing Professional with expertise in Amazon PPC management, listing optimization, and marketplace strategy. Proven ability to drive visibility, increase conversion rates, and maximize advertising ROI through data-driven marketing campaigns, SEO best practices, and consumer behavior analysis.
-        </section>
-
-        <!-- Experience Section -->
-        <section class="section">
-          <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
-          
-          <div class="experience-item">
-            <div class="experience-header">
-              <div class="job-title">E-commerce & Digital Marketing Student (Part-Time Studies)</div>
-              <div class="company">
-                Vancouver Island University
-                <span class="job-period">2018–2024</span>
-              </div>
-            </div>
-            <p class="job-description">
-              Specialized in digital marketplace dynamics, PPC advertising, and e-commerce optimization strategies through case studies and applied research projects.
-            </p>
-            <ul class="achievements-list">
-              <li class="achievement-item">
-                <span class="highlight">Amazon PPC Management:</span> Developed comprehensive advertising strategies using Sponsored Products, Brands, and Display campaigns; optimized bidding strategies and implemented negative keywords to improve ACOS and ROAS.
-              </li>
-              <li class="achievement-item">
-                <span class="highlight">Marketplace Optimization:</span> Implemented SEO best practices across product listings using keyword research tools to enhance search visibility and conversion rates.
-              </li>
-              <li class="achievement-item">
-                <span class="highlight">Digital Analytics:</span> Created reporting dashboards to track advertising performance and conversion metrics, producing actionable insights for optimization strategies.
-              </li>
-              <li class="achievement-item">
-                <span class="highlight">E-commerce Strategy:</span> Developed marketplace strategies examining product lifecycle management, pricing strategies, and competitive analysis to increase market share.
-              </li>
-            </ul>
+    <!-- Resume Options Grid -->
+    <div class="resume-grid">
+      <!-- Amazon PPC Resume -->
+      <a href="amazon/" class="resume-card amazon">
+        <div class="card-header">
+          <div class="card-icon amazon-icon">A</div>
+          <div>
+            <h2 class="card-title">Amazon PPC Specialist</h2>
+            <p class="card-subtitle">Marketplace Advertising & Optimization</p>
           </div>
-          
-          <div class="experience-item">
-            <div class="experience-header">
-              <div class="job-title">Manager</div>
-              <div class="company">
-                College Pro Painting
-                <span class="job-period">2019–2020</span>
-              </div>
-            </div>
-            <p class="job-description">
-              Led company-wide marketing, business development, and customer service operations, implementing strategic business roadmaps and client awareness campaigns.
-            </p>
-            <ul class="achievements-list">
-              <li class="achievement-item">
-                <span class="highlight">Digital Marketing Management:</span> Executed targeted digital marketing campaigns, tracked conversion metrics, and optimized online business profiles to reach high-value geographical areas.
-              </li>
-              <li class="achievement-item">
-                <span class="highlight">Business Acumen:</span> Managed a 10-member team, led customer acquisition strategies, and implemented operational plans that increased revenues and boosted client satisfaction.
-              </li>
-            </ul>
-          </div>
-        </section>
+        </div>
+        <p class="card-description">
+          Specialized resume highlighting expertise in Amazon advertising management, listing optimization, and marketplace strategy development.
+        </p>
+        <div class="skills-preview">
+          <span class="skill-tag">Amazon PPC</span>
+          <span class="skill-tag">Listing Optimization</span>
+          <span class="skill-tag">Keyword Research</span>
+          <span class="skill-tag">ACOS Optimization</span>
+          <span class="skill-tag">Sponsored Ads</span>
+        </div>
+        <button class="view-resume-btn">View Amazon Resume →</button>
+      </a>
 
-        <!-- Core Competencies Section -->
-        <section class="section">
-          <h3 class="section-title">CORE COMPETENCIES</h3>
-          
-          <div class="experience-item">
-            <ul class="achievements-list">
-              <li class="achievement-item">
-                <span class="highlight">Amazon Advertising Management:</span> Conducted keyword research and implemented strategic bidding to maximize visibility, ROAS, and sustainable growth.
-              </li>
-              <li class="achievement-item">
-                <span class="highlight">Listing Optimization:</span> Utilized SEO best practices to develop compelling product titles, bullet points, descriptions, and A+ content, improving organic search rankings.
-              </li>
-              <li class="achievement-item">
-                <span class="highlight">E-commerce Analytics:</span> Analyzed traffic and consumer behavior to implement data-driven optimization strategies across marketplace channels.
-              </li>
-            </ul>
+      <!-- Shopify Developer Resume -->
+      <a href="shopify/" class="resume-card shopify">
+        <div class="card-header">
+          <div class="card-icon shopify-icon">S</div>
+          <div>
+            <h2 class="card-title">Shopify Developer</h2>
+            <p class="card-subtitle">E-commerce Development & Strategy</p>
           </div>
-        </section>
-      </main>
-
-      <aside class="side-column">
-        <!-- Skills Section -->
-        <section class="section">
-          <h3 class="section-title">EXPERTISE</h3>
-          <ul class="skills-list">
-            <li class="skill-item">Amazon PPC Management</li>
-            <li class="skill-item">Listing Optimization</li>
-            <li class="skill-item">Keyword Research</li>
-            <li class="skill-item">Content Management</li>
-            <li class="skill-item">Sponsored Ads</li>
-            <li class="skill-item">Consumer Behavior</li>
-            <li class="skill-item">SWOT Analysis</li>
-            <li class="skill-item">B2C Sales</li>
-            <li class="skill-item">E-commerce Copywriting</li>
-            <li class="skill-item">Conversion Optimization</li>
-          </ul>
-        </section>
-
-        <!-- Education Section -->
-        <section class="section">
-          <h3 class="section-title">EDUCATION</h3>
-          
-          <div class="education-item">
-            <div class="degree">Bachelor of Arts</div>
-            <div class="school">
-              <span>Vancouver Island University</span>
-              <span>Ant. 2024</span>
-            </div>
-            <div>Psychology, Business & Marketing</div>
-          </div>
-          
-          <div class="education-item">
-            <div class="degree">High School Diploma</div>
-            <div class="school">
-              <span>Henry WiseWood High School</span>
-              <span>2010</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Technologies Section -->
-        <section class="section">
-          <h3 class="section-title">TECH STACK</h3>
-          
-          <div class="tech-categories">
-            <div class="tech-category">
-              <div class="category-name">Amazon Tools</div>
-              <div class="tech-list">Helium 10, Jungle Scout, Seller Central, Vendor Central, Amazon DSP</div>
-            </div>
-            
-            <div class="tech-category">
-              <div class="category-name">Marketing Platforms</div>
-              <div class="tech-list">Google Analytics, Adobe XD, Social Media Platforms</div>
-            </div>
-            
-            <div class="tech-category">
-              <div class="category-name">Web Development</div>
-              <div class="tech-list">WordPress, Wix, Shopify, Etsy, HTML & CSS</div>
-            </div>
-            
-            <div class="tech-category">
-              <div class="category-name">Office Productivity</div>
-              <div class="tech-list">MS Office Suite, G Suite</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Certifications/Coursework -->
-        <section class="section">
-          <h3 class="section-title">PROFESSIONAL DEVELOPMENT</h3>
-          <ul class="skills-list">
-            <li class="skill-item">Amazon Advertising</li>
-            <li class="skill-item">Social Media Marketing</li>
-            <li class="skill-item">International Marketing</li>
-            <li class="skill-item">Brand & Behaviour</li>
-            <li class="skill-item">E-commerce Management</li>
-            <li class="skill-item">Research Methods</li>
-          </ul>
-        </section>
-      </aside>
+        </div>
+        <p class="card-description">
+          Full-stack e-commerce resume showcasing Shopify development, theme customization, and conversion optimization expertise.
+        </p>
+        <div class="skills-preview">
+          <span class="skill-tag">Shopify Development</span>
+          <span class="skill-tag">Liquid Templates</span>
+          <span class="skill-tag">Conversion Optimization</span>
+          <span class="skill-tag">E-commerce Strategy</span>
+          <span class="skill-tag">Theme Customization</span>
+        </div>
+        <button class="view-resume-btn">View Shopify Resume →</button>
+      </a>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        Looking for a versatile marketing professional who can drive results across multiple platforms?<br>
+        Let's connect and discuss how I can help grow your business.
+      </p>
+    </footer>
   </div>
 </body>
 </html>
