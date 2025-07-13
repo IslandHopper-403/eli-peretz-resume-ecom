@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eli Peretz - Business Development & Account Management Specialist</title>
+  <style>
+    /* Professional design optimized for travel/hospitality industry */
+    :root {
+      --primary: #0077c2;
+      --secondary: #00a2e6;
+      --dark: #333333;
+      --light: #ffffff;
+      --accent: #f7f9fc;
+      --gray: #6c757d;
+      --success: #28a745;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background-color: var(--light);
+      font-size: 0.95rem;
+    }
+    
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 25px;
+    }
+    
+    /* Header */
+    .resume-header {
+      margin-bottom: 25px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 25px;
+    }
+    
+    .profile-image {
+      flex-shrink: 0;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .header-text {
+      flex: 1;
+    }
+    
+    .name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 5px;
+    }
+    
+    .title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gray);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-item svg {
+      margin-right: 8px;
+      fill: var(--primary);
+    }
+    
+    /* Location highlight for Da Nang */
+    .location-highlight {
+      background: linear-gradient(135deg, var(--success) 0%, #20c997 100%);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+    
+    /* Main layout */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .main-column {
+      order: 1;
+    }
+    
+    .side-column {
+      order: 2;
+      background-color: var(--accent);
+      padding: 25px;
+      border-radius: 6px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    /* Sections */
+    .section {
+      margin-bottom: 28px;
+    }
+    
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 15px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    /* Summary */
+    .summary {
+      margin-bottom: 25px;
+      font-size: 1rem;
+      padding: 20px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    /* Skills */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      list-style-type: none;
+    }
+    
+    .skill-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-item:before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block; 
+      width: 15px;
+    }
+    
+    /* Experience */
+    .experience-item {
+      margin-bottom: 20px;
+    }
+    
+    .experience-header {
+      margin-bottom: 10px;
+    }
+    
+    .job-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+    
+    .company {
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      color: var(--dark);
+    }
+    
+    .job-period {
+      color: var(--gray);
+      font-weight: normal;
+    }
+    
+    .job-description {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .achievements-list {
+      list-style-type: none;
+    }
+    
+    .achievement-item {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.9rem;
+    }
+    
+    .achievement-item::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .highlight {
+      font-weight: 500;
+      color: var(--primary);
+    }
+    
+    /* Key metrics highlight */
+    .metrics-highlight {
+      background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+      padding: 15px;
+      border-radius: 6px;
+      border-left: 4px solid #f39c12;
+      margin: 15px 0;
+    }
+    
+    .metric-item {
+      font-weight: 600;
+      color: #e67e22;
+    }
+    
+    /* Education */
+    .education-item {
+      margin-bottom: 12px;
+    }
+    
+    .degree {
+      font-weight: 600;
+    }
+    
+    .school {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+    
+    /* Technologies */
+    .tech-categories {
+      margin-bottom: 10px;
+    }
+    
+    .tech-category {
+      margin-bottom: 8px;
+    }
+    
+    .category-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+    
+    .tech-list {
+      font-size: 0.9rem;
+    }
+
+    /* Languages section */
+    .languages {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    
+    .languages .category-name {
+      color: white;
+      font-weight: 600;
+    }
+    
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    /* Portfolio Links */
+    .portfolio-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .portfolio-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .resume-body {
+        grid-template-columns: 1fr;
+      }
+      
+      .main-column {
+        order: 2;
+      }
+      
+      .side-column {
+        order: 1;
+      }
+      
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="resume-header">
+      <div class="header-content">
+        <div class="profile-section">
+          <div class="profile-image">
+            <img src="profile-photo.jpg" alt="Eli Peretz Professional Photo" class="profile-img">
+          </div>
+          <div class="header-text">
+            <h1 class="name">ELI PERETZ</h1>
+            <h2 class="title">Business Development & Account Management Specialist</h2>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+            </svg>
+            Da Nang, Vietnam
+            <span class="location-highlight">✈️ Local Resident</span>
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+            </svg>
+            Eli.Peretz1992@gmail.com
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
+            </svg>
+            +1 403 830-0784
+          </div>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <a href="https://www.linkedin.com/in/eli-peretz/" target="_blank" style="color: inherit; text-decoration: none;">LinkedIn Profile</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="resume-body">
+      <main class="main-column">
+        <!-- Summary Section -->
+        <section class="summary">
+          Dynamic business development professional with proven expertise in e-commerce partnerships, account management, and revenue growth. Currently based in Da Nang, Vietnam with deep understanding of local market dynamics and international business development. Demonstrated success in acquiring partners, negotiating commercial terms, and driving platform growth through strategic relationship management.
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section">
+          <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="job-title">Business Manager & Partnership Development</div>
+              <div class="company">
+                College Pro Painting
+                <span class="job-period">2019–2020</span>
+              </div>
+            </div>
+            <p class="job-description">
+              Led end-to-end business development operations including partner acquisition, account management, and revenue optimization. Managed team operations while developing strategic partnerships and client relationships.
+            </p>
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Partnership Acquisition:</span> Executed grassroots marketing campaigns and direct outreach to acquire new clients, conducting market research and competitive analysis to identify high-value target segments.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Account Management:</span> Managed portfolio of 50+ client accounts, ensuring service delivery excellence, maintaining relationships, and driving repeat business through strategic consultation.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Team Leadership:</span> Supervised 10-member operations team, implemented process improvements, and coordinated cross-functional activities to ensure project delivery and client satisfaction.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Revenue Growth:</span> Increased client acquisition by 40% through strategic territory expansion and optimized pricing strategies for different market segments.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="job-title">E-commerce Partnership Manager</div>
+              <div class="company">
+                Self-Employed Entrepreneur
+                <span class="job-period">2020–Present</span>
+              </div>
+            </div>
+            <p class="job-description">
+              Built and managed multiple e-commerce brands focusing on partner acquisition, supplier relationships, and platform optimization. Developed expertise in online marketplace dynamics and international supplier negotiations.
+            </p>
+            
+            <div class="metrics-highlight">
+              <div class="metric-item">🎯 Key Achievements:</div>
+              <div>• Generated 10,000+ website visitors through strategic digital marketing</div>
+              <div>• Established partnerships with 15+ international suppliers across Asia-Pacific</div>
+              <div>• Managed end-to-end onboarding for multiple brands on various platforms</div>
+            </div>
+
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Supplier Acquisition & Onboarding:</span> Identified and negotiated partnerships with manufacturers and suppliers across Vietnam, China, and Southeast Asia for dropshipping and fulfillment operations.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Platform Optimization:</span> Managed product listings, pricing strategies, and inventory coordination across multiple e-commerce platforms to maximize revenue and market presence.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Market Analysis:</span> Conducted comprehensive market research to identify trends, competitor pricing, and growth opportunities in fashion, home goods, and lifestyle segments.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Relationship Management:</span> Maintained ongoing partnerships with suppliers and platform partners, ensuring optimal terms, quality standards, and timely fulfillment.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div class="job-title">Business Development Consultant</div>
+              <div class="company">
+                Client Projects
+                <span class="job-period">2021–Present</span>
+              </div>
+            </div>
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Hadita Flow Fashion:</span> Developed complete go-to-market strategy including supplier sourcing, website development, and digital marketing launch plan for women's fashion brand.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Northern Pine Saunas:</span> Established B2B partnership framework for authorized retailer relationships, coordinated with manufacturers, and developed pricing strategies for Vietnam market entry.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Data-Driven Decisions:</span> Utilized analytics tools and market research to provide strategic recommendations for product positioning, pricing optimization, and partnership development.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section class="section">
+          <h3 class="section-title">CORE COMPETENCIES</h3>
+          
+          <div class="experience-item">
+            <ul class="achievements-list">
+              <li class="achievement-item">
+                <span class="highlight">Partnership Development:</span> Proven ability to identify, pitch, and close strategic partnerships with emphasis on value proposition articulation and win-win commercial terms.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Account Management:</span> Strong track record in maintaining and growing business relationships through consultative approach and strategic account planning.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Market Analysis:</span> Experience conducting market research, competitive analysis, and identifying growth opportunities in dynamic business environments.
+              </li>
+              <li class="achievement-item">
+                <span class="highlight">Cross-Cultural Communication:</span> Extensive experience working with international partners and suppliers, particularly in Asia-Pacific region.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <aside class="side-column">
+        <!-- Languages -->
+        <div class="languages">
+          <div class="category-name">🌐 LANGUAGES</div>
+          <div class="language-item">
+            <span>English</span>
+            <span>Native</span>
+          </div>
+          <div class="language-item">
+            <span>Vietnamese</span>
+            <span>Conversational</span>
+          </div>
+        </div>
+
+        <!-- Location Advantage -->
+        <section class="section">
+          <h3 class="section-title">VIETNAM MARKET EXPERTISE</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Da Nang Local Resident</li>
+            <li class="skill-item">Vietnam Business Environment</li>
+            <li class="skill-item">Southeast Asia Suppliers</li>
+            <li class="skill-item">Local Partnership Networks</li>
+            <li class="skill-item">Cultural Adaptation</li>
+            <li class="skill-item">Regional Travel Experience</li>
+          </ul>
+        </section>
+
+        <!-- Business Skills -->
+        <section class="section">
+          <h3 class="section-title">BUSINESS DEVELOPMENT SKILLS</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Partnership Acquisition</li>
+            <li class="skill-item">Contract Negotiation</li>
+            <li class="skill-item">Account Management</li>
+            <li class="skill-item">Revenue Optimization</li>
+            <li class="skill-item">Market Research</li>
+            <li class="skill-item">Competitive Analysis</li>
+            <li class="skill-item">Lead Generation</li>
+            <li class="skill-item">Relationship Building</li>
+            <li class="skill-item">Strategic Planning</li>
+            <li class="skill-item">Team Leadership</li>
+          </ul>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+          <h3 class="section-title">TECHNICAL & ANALYTICAL</h3>
+          <div class="tech-categories">
+            <div class="tech-category">
+              <div class="category-name">Data Analysis</div>
+              <div class="tech-list">Excel, Google Analytics, Market Research, KPI Tracking</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">Digital Platforms</div>
+              <div class="tech-list">E-commerce Platforms, CRM Systems, Social Media Marketing</div>
+            </div>
+            
+            <div class="tech-category">
+              <div class="category-name">Communication Tools</div>
+              <div class="tech-list">Microsoft Office, G Suite, Project Management Tools</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Travel & Hospitality -->
+        <section class="section">
+          <h3 class="section-title">TRAVEL & HOSPITALITY KNOWLEDGE</h3>
+          <ul class="skills-list">
+            <li class="skill-item">Tourism Industry Trends</li>
+            <li class="skill-item">Hotel Operations</li>
+            <li class="skill-item">Online Booking Platforms</li>
+            <li class="skill-item">Customer Experience</li>
+            <li class="skill-item">Revenue Management</li>
+            <li class="skill-item">Digital Marketing</li>
+          </ul>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+          <h3 class="section-title">EDUCATION</h3>
+          
+          <div class="education-item">
+            <div class="degree">Bachelor of Arts</div>
+            <div class="school">
+              <span>Vancouver Island University</span>
+              <span>Ant. 2024</span>
+            </div>
+            <div>Psychology, Business & Marketing</div>
+          </div>
+          
+          <div class="education-item">
+            <div class="degree">High School Diploma</div>
+            <div class="school">
+              <span>Henry WiseWood High School</span>
+              <span>2010</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Additional Qualifications -->
+        <section class="section">
+          <h3 class="section-title">ADDITIONAL QUALIFICATIONS</h3>
+          <ul class="skills-list">
+            <li class="skill-item">International Business Experience</li>
+            <li class="skill-item">Startup Environment Adaptability</li>
+            <li class="skill-item">Travel Flexibility</li>
+            <li class="skill-item">Service-Oriented Mindset</li>
+            <li class="skill-item">Cross-Functional Collaboration</li>
+            <li class="skill-item">Rapid Learning Ability</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
