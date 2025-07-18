@@ -138,9 +138,31 @@
       margin-bottom: 25px;
       font-size: 1rem;
     }
+
+   /* Expertise */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      list-style-type: none;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .skill-item:before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block; 
+      width: 15px;
+    }
+
     
-/* Skills */
-.skills-list {
+/* Skills  */
+.skills-list-02 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -148,14 +170,14 @@
   margin-bottom: 15px;
 }
 
-.skill-item {
+.skill-item-02 {
   display: flex;
   align-items: center;
   padding: 6px 0;
   font-size: 0.9rem;
 }
 
-.skill-item:before {
+.skill-item-02:before {
   content: "•";
   color: var(--primary);
   font-weight: bold;
@@ -462,12 +484,12 @@
         <!-- Certifications/Coursework -->
         <section class="section">
           <h3 class="section-title">PROFESSIONAL DEVELOPMENT</h3>
-          <ul class="skills-list">
-            <li class="skill-item">Amazon FBA Advantage Course</li>
-            <li class="skill-item"> Skool - Amazon Weekly Mentorship</li>
-            <li class="skill-item">Sophie Society Profitable PPC Challenge</li>
-            <li class="skill-item">Sophie Society PPC Workshop</li>
-            <li class="skill-item">For Good Profits Mentorship & Course</li>
+          <ul class="skills-list-02">
+            <li class="skill-item-02">Amazon FBA Advantage Course</li>
+            <li class="skill-item-02"> Skool - Amazon Weekly Mentorship</li>
+            <li class="skill-item-02">Sophie Society Profitable PPC Challenge</li>
+            <li class="skill-item-02">Sophie Society PPC Workshop</li>
+            <li class="skill-item-02">For Good Profits Mentorship & Course</li>
           </ul>
         </section>
       </aside>
