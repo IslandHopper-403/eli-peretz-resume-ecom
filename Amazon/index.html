@@ -139,26 +139,35 @@
       font-size: 1rem;
     }
     
-    /* Skills */
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      list-style-type: none;
-    }
-    
-    .skill-item {
-      display: flex;
-      align-items: center;
-    }
-    
-    .skill-item:before {
-      content: "•";
-      color: var(--primary);
-      font-weight: bold;
-      display: inline-block; 
-      width: 15px;
-    }
+ /* Skills */
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  list-style-type: none;
+  margin-bottom: 15px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  border-left: 3px solid var(--primary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.skill-item:before {
+  content: "🎓";
+  color: var(--primary);
+  font-weight: bold;
+  display: inline-block; 
+  width: 25px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
     
     /* Experience */
     .experience-item {
