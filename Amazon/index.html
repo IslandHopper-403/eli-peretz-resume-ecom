@@ -292,6 +292,50 @@
         grid-template-columns: 1fr;
       }
     }
+
+     /* CSS for Competitive Advantage Section */
+        .competitive-advantage-section {
+            margin: 30px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .competitive-advantage-title {
+            color: #2563eb; /* Blue color matching your resume */
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .competitive-advantage-box {
+            background-color: #f3f4f6; /* Light grey background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .competitive-advantage-text {
+            color: #1f2937; /* Darker text to match resume body */
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Alternative darker grey option */
+        .competitive-advantage-box-dark {
+            background-color: #e5e7eb;
+        }
+
+        /* For better print compatibility */
+        @media print {
+            .competitive-advantage-box {
+                box-shadow: none;
+                border: 1px solid #d1d5db;
+            }
+        }
+
+    
   </style>
 </head>
 <body>
@@ -338,6 +382,17 @@
     </header>
 
     <div class="resume-body">
+
+    <div class="competitive-advantage-section">
+        <h2 class="competitive-advantage-title">Competitive Advantage</h2>
+        <div class="competitive-advantage-box">
+            <p class="competitive-advantage-text">
+                I continuously invest in my professional development through premium courses and elite mentorship programs. By dedicating personal resources to stay ahead of Amazon's evolving landscape, I bring cutting-edge strategies and insider knowledge that most consultants lack. My commitment to ongoing education—from BAD Marketing's weekly sessions to Sophie Society's advanced certifications—ensures clients receive the latest proven tactics, not outdated playbooks.
+            </p>
+        </div>
+    </div>
+
+      
       <main class="main-column">
         <!-- Summary Section -->
         <section class="summary">
