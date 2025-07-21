@@ -138,20 +138,20 @@
       margin-bottom: 25px;
       font-size: 1rem;
     }
-
-   /* Expertise */
+    
+    /* Expertise */
     .skills-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
       list-style-type: none;
     }
-
+    
     .skill-item {
       display: flex;
       align-items: center;
     }
-
+    
     .skill-item:before {
       content: "•";
       color: var(--primary);
@@ -159,32 +159,31 @@
       display: inline-block; 
       width: 15px;
     }
-
     
-/* Skills  */
-.skills-list-02 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  list-style-type: none;
-  margin-bottom: 15px;
-}
-
-.skill-item-02 {
-  display: flex;
-  align-items: center;
-  padding: 6px 0;
-  font-size: 0.9rem;
-}
-
-.skill-item-02:before {
-  content: "•";
-  color: var(--primary);
-  font-weight: bold;
-  display: inline-block; 
-  width: 20px;
-  margin-right: 5px;
-}
+    /* Skills  */
+    .skills-list-02 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      list-style-type: none;
+      margin-bottom: 15px;
+    }
+    
+    .skill-item-02 {
+      display: flex;
+      align-items: center;
+      padding: 6px 0;
+      font-size: 0.9rem;
+    }
+    
+    .skill-item-02:before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block; 
+      width: 20px;
+      margin-right: 5px;
+    }
     
     /* Experience */
     .experience-item {
@@ -273,7 +272,26 @@
     .tech-list {
       font-size: 0.9rem;
     }
-
+    
+    /* Competitive Advantage Section - Refined */
+    .competitive-advantage-section {
+      margin-bottom: 28px;
+    }
+    
+    .competitive-advantage-box {
+      background-color: #f3f4f6;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .competitive-advantage-text {
+      color: var(--dark);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
     /* Responsive design */
     @media (max-width: 768px) {
       .resume-body {
@@ -292,49 +310,14 @@
         grid-template-columns: 1fr;
       }
     }
-
-     /* CSS for Competitive Advantage Section */
-        .competitive-advantage-section {
-            margin: 30px 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .competitive-advantage-title {
-            color: #2c6fad; /* Blue color matching your resume */
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
-
-        .competitive-advantage-box {
-            background-color: #f3f4f6; /* Light grey background */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .competitive-advantage-text {
-            color: #1f2937; /* Darker text to match resume body */
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Alternative darker grey option */
-        .competitive-advantage-box-dark {
-            background-color: #e5e7eb;
-        }
-
-        /* For better print compatibility */
-        @media print {
-            .competitive-advantage-box {
-                box-shadow: none;
-                border: 1px solid #d1d5db;
-            }
-        }
-
     
+    /* For better print compatibility */
+    @media print {
+      .competitive-advantage-box {
+        box-shadow: none;
+        border: 1px solid #d1d5db;
+      }
+    }
   </style>
 </head>
 <body>
@@ -379,31 +362,28 @@
         </div>
       </div>
     </header>
-
+    
     <div class="resume-body">
-
       <main class="main-column">
         <!-- Summary Section -->
         <section class="summary">
           Amazon Marketing Professional specializing in Amazon PPC, listing optimization, and marketplace strategy. Driving visibility and low ACoS through data-driven campaigns, enhanced listing optimization, and consumer behavior analysis.
         </section>
-
-             <!-- Competitive Advantage Section HTML -->
-    <div class="competitive-advantage-section">
-        <h3 class="competitive-advantage-title">Competitive Advantage</h3>
-        <div class="competitive-advantage-box">
+        
+        <!-- Competitive Advantage Section -->
+        <section class="competitive-advantage-section">
+          <h3 class="section-title">COMPETITIVE ADVANTAGE</h3>
+          <div class="competitive-advantage-box">
             <p class="competitive-advantage-text">
-                I continuously invest in my professional development through premium courses and elite mentorship programs. By dedicating personal resources to stay ahead of Amazon's evolving landscape, I bring cutting-edge strategies and insider knowledge that most consultants lack. My commitment to ongoing education—from BAD Marketing's weekly sessions to Sophie Society's advanced certifications—ensures clients receive the latest proven tactics, not outdated playbooks.
+              I continuously invest in my professional development through premium courses and elite mentorship programs. By dedicating personal resources to stay ahead of Amazon's evolving landscape, I bring cutting-edge strategies and insider knowledge that most consultants lack. My commitment to ongoing education—from BAD Marketing's weekly sessions to Sophie Society's advanced certifications—ensures clients receive the latest proven tactics, not outdated playbooks.
             </p>
-        </div>
-    </div>
-
+          </div>
+        </section>
   
         <!-- Experience Section -->
         <section class="section">
           <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
-
-       <div class="experience-item">
+          <div class="experience-item">
             <div class="experience-header">
               <div class="job-title">Brand Owner & Freelance</div>
               <div class="company">
@@ -419,22 +399,21 @@
                 <span class="highlight">Keyword Research & Planning:</span> Detailed keyword research utilizing Helium10. Organizing keywords into semantic families, n-gram lengths, search volume, and keyword sales. Strategically planning keyword uses from launch to scale.
               </li>
               <li class="achievement-item">
-                <span class="highlight">PPC Strategy:</span> Launched PPC campaigns strategically, utilizing every campaign type throughout the product launch journey. From SPA campaigns to SPM campaigns. Identifiying high performing keywords and product targets to graduate from Auto -> Phrase & Broad -> Exact Match ranking campaigns. 
+                <span class="highlight">PPC Strategy:</span> Launched PPC campaigns strategically, utilizing every campaign type throughout the product launch journey. From SPA campaigns to SPM campaigns. Identifying high performing keywords and product targets to graduate from Auto -> Phrase & Broad -> Exact Match ranking campaigns. 
               </li>
               <li class="achievement-item">
-                <span class="highlight">PPC Managment:</span> Utilized Sponsored Brand Campaigns for middle-funnel awarness campaigns. Working with UGC creators for high-converting video ads that are true to brand voice and engaging for consumers.
+                <span class="highlight">PPC Management:</span> Utilized Sponsored Brand Campaigns for middle-funnel awareness campaigns. Working with UGC creators for high-converting video ads that are true to brand voice and engaging for consumers.
               </li>
               <li class="achievement-item">
-                <span class="highlight"> Listing Creation:</span> Working closely with graphic designers to plan high converting lisiting content from listing images, A+ modules, and brand-story modules.
+                <span class="highlight">Listing Creation:</span> Working closely with graphic designers to plan high converting listing content from listing images, A+ modules, and brand-story modules.
               </li> 
             </ul>
           </div>
-     </section>
-
- <!-- Experience Section -->
+        </section>
+        
+        <!-- Education Section -->
         <section class="section">
-          <h3 class="section-title">Education</h3> 
-
+          <h3 class="section-title">EDUCATION</h3> 
           <div class="experience-item">
             <div class="experience-header">
               <div class="job-title">Psychology & Digital Marketing Student</div>
@@ -456,11 +435,10 @@
             </ul>
           </div>
         </section>
-
+        
         <!-- Core Competencies Section -->
         <section class="section">
           <h3 class="section-title">CORE COMPETENCIES</h3>
-          
           <div class="experience-item">
             <ul class="achievements-list">
               <li class="achievement-item">
@@ -481,29 +459,29 @@
             </ul>
           </div>
         </section>
-
-   <section class="section">
-          <h3 class="section-title">Certificates</h3>
-          
+        
+        <!-- Certificates Section -->
+        <section class="section">
+          <h3 class="section-title">CERTIFICATES</h3>
           <div class="experience-item">
             <ul class="achievements-list">
               <li class="achievement-item">
-                <span class="highlight">Amazon FBA Advantage Course:</span> Completed the Amazon FBA Advantage course covering everything in the Amazon product pipeline from product research, supplier sourcing, competitor & market evaluation, SEO & Amazon A9 algorythim optimization, and industry best pratices for launching products on Amazon. 
+                <span class="highlight">Amazon FBA Advantage Course:</span> Completed the Amazon FBA Advantage course covering everything in the Amazon product pipeline from product research, supplier sourcing, competitor & market evaluation, SEO & Amazon A9 algorithm optimization, and industry best practices for launching products on Amazon. 
               </li>
               <li class="achievement-item">
-                <span class="highlight">BAD Marketing Weekly Mentorship :</span> I am apart of BAD Marketing's weekly mentorship group on Skool. This includes weekly live calls to review challenges, oppurtunties and to get support within a leading Amazon sellers group run by a top marketing agency.
+                <span class="highlight">BAD Marketing Weekly Mentorship:</span> I am a part of BAD Marketing's weekly mentorship group on Skool. This includes weekly live calls to review challenges, opportunities and to get support within a leading Amazon sellers group run by a top marketing agency.
               </li>
               <li class="achievement-item">
-                <span class="highlight">Sophie Society Profitable PPC Challenge:</span> Completed the 5-day Profitable PPC Challenge run by Sophie Society to cover all industry best practices and new oppurtunites for Amazon Sellers. Covering the best in industry PPC tactics and frameworks and leading strategies for ranking. 
+                <span class="highlight">Sophie Society Profitable PPC Challenge:</span> Completed the 5-day Profitable PPC Challenge run by Sophie Society to cover all industry best practices and new opportunities for Amazon Sellers. Covering the best in industry PPC tactics and frameworks and leading strategies for ranking. 
               </li>
-             <li class="achievement-item">
+              <li class="achievement-item">
                 <span class="highlight">Sophie Society PPC Workshop:</span> Participated in Sophie Society PPC Workshop. Reviewing industry leading best practices, and tactics. Learning methodologies on how to dominate Amazon sponsored search results for higher CTRs, brand awareness, brand defense and shielding campaigns, and lower ACoS targets.  
               </li> 
             </ul>
           </div>
         </section>
       </main>
-
+      
       <aside class="side-column">
         <!-- Skills Section -->
         <section class="section">
@@ -520,11 +498,10 @@
             <li class="skill-item">CRO & CTR Optimization</li>
           </ul>
         </section>
-
+        
         <!-- Education Section -->
         <section class="section">
           <h3 class="section-title">EDUCATION</h3>
-          
           <div class="education-item">
             <div class="degree">Bachelor of Arts</div>
             <div class="school">
@@ -534,11 +511,10 @@
             <div>Psychology, Business & Marketing</div>
           </div>
         </section>
-
+        
         <!-- Technologies Section -->
         <section class="section">
           <h3 class="section-title">TECH STACK</h3>
-          
           <div class="tech-categories">
             <div class="tech-category">
               <div class="category-name">Amazon Tools</div>
@@ -547,9 +523,9 @@
             
             <div class="tech-category">
               <div class="category-name">Optimization Tools</div>
-              <div class="tech-list"> ScaleInsights, Adlabs, PickFu </div>
+              <div class="tech-list">ScaleInsights, Adlabs, PickFu</div>
             </div>
-
+            
             <div class="tech-category">
               <div class="category-name">Office Productivity</div>
               <div class="tech-list">MS Office Suite, G Suite</div>
@@ -559,16 +535,15 @@
               <div class="category-name">Excel & Data Management:</div>
               <div class="tech-list">VLOOKUP, Pivot Tables, Formulas, Market Research Tracking, Supplier & Inventory Management, Conditional Formatting</div>
             </div>
-            
-            
           </div>
         </section>
+        
         <!-- Certifications/Coursework -->
         <section class="section">
           <h3 class="section-title">PROFESSIONAL DEVELOPMENT</h3>
           <ul class="skills-list-02">
             <li class="skill-item-02">Amazon FBA Advantage Course</li>
-            <li class="skill-item-02"> Skool - Amazon Weekly Mentorship</li>
+            <li class="skill-item-02">Skool - Amazon Weekly Mentorship</li>
             <li class="skill-item-02">Sophie Society Profitable PPC Challenge</li>
             <li class="skill-item-02">Sophie Society PPC Workshop</li>
             <li class="skill-item-02">For Good Profits Mentorship & Course</li>
